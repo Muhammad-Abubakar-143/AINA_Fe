@@ -94,7 +94,14 @@ const ConversationPage = () => {
           </Form>
             </div>
             <div className='mt-4 space-y-4'>
-              mesage content
+              <div className='flex flex-col-reverse gap-y-4'>
+                {messeges.map((messege)=>(
+                  <div key={messege.content}>
+                    {messege.content}
+                  </div>
+                ))}
+
+              </div>
             </div>
         </div>
     </div>
