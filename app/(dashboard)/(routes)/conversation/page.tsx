@@ -12,6 +12,9 @@ import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { ChatCompletionRequestMessage } from 'openai'
+import Empty from '@/components/Empty'
+import {Loader} from '@/components/Loader'
+import { cn } from '@/lib/utils'
 
 
 const ConversationPage = () => {
@@ -94,9 +97,21 @@ const ConversationPage = () => {
           </Form>
             </div>
             <div className='mt-4 space-y-4'>
+              {isLoading && (
+                <div className='p-8 rounded-lg flex justify-center items-center w-full bg-muted'>
+                 <Loader/>
+                </div>
+              )}
+              {messeges.length ===0 && !isLoading && (
+                <Empty label='Conversation is Empty.'/>
+              )}
               <div className='flex flex-col-reverse gap-y-4'>
                 {messeges.map((messege)=>(
-                  <div key={messege.content}>
+                  <div key={messege.content}
+                  className={cn('p-8 w-full rounded-lg flex items-start gap-x-4', 
+                  messege.role === 'user' ? 'border-black/10 bg-white border' : 'bg-muted'
+                  )}
+                  >
                     {messege.content}
                   </div>
                 ))}
