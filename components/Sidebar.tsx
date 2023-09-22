@@ -2,7 +2,7 @@
 
 
 import { cn } from "@/lib/utils"
-import { LayoutDashboard,Code, ImageIcon, MessageSquare, Music, Settings, VideoIcon } from "lucide-react"
+import { LayoutDashboard,Code, ImageIcon, MessageSquare, Music, Settings, VideoIcon, Newspaper } from "lucide-react"
 import { Montserrat } from "next/font/google"
 import Image from "next/image"
 import Link from "next/link"
@@ -49,10 +49,17 @@ const sideRoutes = [
     href: '/code',
   },
   {
+    label: 'News',
+    icon: Newspaper,
+    color: "text-blue-700",
+    href: '/news',
+  },
+  {
     label: 'Settings',
     icon: Settings,
     href: '/settings',
   },
+ 
 ];
 
 
@@ -65,7 +72,7 @@ const Sidebar = () => {
           <div className="relative w-8 h-8 mr-4">
             <Image src='/logo.png' alt="logo" fill />
           </div>
-          <h1 className={cn("text-2xl font-bold", monsterrat.className)}>Genius</h1>
+          <h1 className={cn("text-2xl font-bold", monsterrat.className)}>AINA</h1>
         </Link>
         <div className="space-y-1">
           {sideRoutes.map((index) => (

@@ -1,5 +1,6 @@
 'use client'
 
+import Heading from "@/components/Heading"
 import { Card } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 import { ArrowRight, Code, ImageIcon, MessageSquare, Music, Newspaper, VideoIcon } from "lucide-react"
@@ -52,31 +53,36 @@ const tools =[
   
 ]
 
-export default function DashPage() {
-  const router = useRouter()
-  return (
-    <div className="pb-6">
-      <div className="mb-4 space-y-4">
-        <h2 className="text-2xl md:text-4xl text-center font-bold">Explore the power of AI</h2>
-      <p className="text-center text-sm md:text-lg font-light text-muted-foreground">Experience the Smartest AI, Chat with it</p>
+const NewsPage = () => {
+    const router = useRouter()
+    return (
+      <div className="pb-6">
+        <Heading
+        title="Conversation" 
+        description="Our Simple Conversation Model"
+        icon={MessageSquare}
+        iconColor="text-violet-500"
+        bgColor="bg-violet-500/10"
+        />
+        <div className="px-4 md:px-20 lg:px-32 space-y-4">
+          {tools.map((index)=>(
+           <Card key={index.href} onClick={()=> router.push(index.href)}
+           className="p-4 border-black/5 flex items-center justify-between hover:shadow-md transition cursor-pointer"
+           >
+            <div className="flex items-center gap-x-4">
+            <div className={cn('p-2 w-fit rounded-md', index.bgColor)}>
+              <index.icon className={cn('w-8 h-8', index.color)} />
+            </div>
+            <h1 className="font-semibold">
+              {index.label}
+            </h1>
+            </div>
+              <ArrowRight className="w-5 h-5"/>
+           </Card>
+          ))}
+        </div>
       </div>
-      <div className="px-4 md:px-20 lg:px-32 space-y-4">
-        {tools.map((index)=>(
-         <Card key={index.href} onClick={()=> router.push(index.href)}
-         className="p-4 border-black/5 flex items-center justify-between hover:shadow-md transition cursor-pointer"
-         >
-          <div className="flex items-center gap-x-4">
-          <div className={cn('p-2 w-fit rounded-md', index.bgColor)}>
-            <index.icon className={cn('w-8 h-8', index.color)} />
-          </div>
-          <h1 className="font-semibold">
-            {index.label}
-          </h1>
-          </div>
-            <ArrowRight className="w-5 h-5"/>
-         </Card>
-        ))}
-      </div>
-    </div>
-  )
+    )
 }
+
+export default NewsPage
