@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-import { ChatCompletionRequestMessage } from 'openai'
+
 import Empty from '@/components/Empty'
 import {Loader} from '@/components/Loader'
 
@@ -32,7 +32,7 @@ const MusicPage = () => {
           setMusic(undefined);
   
           const response = await axios.post("/api/music", values);
-          setMusic(response.data.audio)
+          setMusic(response.data)
          
           form.reset();
 

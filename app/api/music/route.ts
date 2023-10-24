@@ -25,10 +25,10 @@ try{
     }
 
     const response = await replicate.run(
-        "meta/musicgen:7a76a8258b23fae65c5a22debb8841d1d7e816b75c2f24218cd2bd8573787906",
+      "suno-ai/bark:b76242b40d67c76ab6742e987628a2a9ac019e11d56ab96c4e91ce03b79b2787",
         {
           input: {
-            model_version: prompt
+            prompt: prompt
           }
         }
       );
