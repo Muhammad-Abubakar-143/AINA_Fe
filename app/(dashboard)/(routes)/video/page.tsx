@@ -19,7 +19,7 @@ import { UserAvatar } from '@/components/UserAvatar'
 import { BotAvatar } from '@/components/BotAvatar'
 
 
-const ConversationPage = () => {
+const VideoPage = () => {
     const form = useForm<z.infer<typeof formShema>>({
         resolver: zodResolver(formShema),
         defaultValues:{
@@ -128,4 +128,4 @@ const ConversationPage = () => {
   )
 }
 
-export default ConversationPage
+export default VideoPage

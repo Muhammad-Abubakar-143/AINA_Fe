@@ -2,7 +2,7 @@
 
 
 import { cn } from "@/lib/utils"
-import { LayoutDashboard,Code, ImageIcon, MessageSquare, Music, Settings, VideoIcon } from "lucide-react"
+import { LayoutDashboard,Code, ImageIcon, MessageSquare, Music, Settings, VideoIcon, Newspaper } from "lucide-react"
 import { Montserrat } from "next/font/google"
 import Image from "next/image"
 import Link from "next/link"
@@ -49,10 +49,17 @@ const sideRoutes = [
     href: '/code',
   },
   {
+    label: 'News',
+    icon: Newspaper,
+    color: "text-blue-700",
+    href: '/news',
+  },
+  {
     label: 'Settings',
     icon: Settings,
     href: '/settings',
   },
+ 
 ];
 
 
@@ -61,11 +68,11 @@ const Sidebar = () => {
   return (
     <div className="flex flex-col space-y-4 py-4 h-full bg-[#111827] text-white">
       <div className="flex-1 px-3 py-2 ">
-        <Link href='/dashboard' className="flex items-center pl-3 mb-14">
+        <Link href='/dashboard' className="flex  pl-3 mb-14">
           <div className="relative w-8 h-8 mr-4">
             <Image src='/logo.png' alt="logo" fill />
           </div>
-          <h1 className={cn("text-2xl font-bold", monsterrat.className)}>Genius</h1>
+          <Image src='/aina(white).svg' alt="aina" width={100} height={1}/>
         </Link>
         <div className="space-y-1">
           {sideRoutes.map((index) => (

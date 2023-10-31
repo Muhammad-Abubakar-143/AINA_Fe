@@ -1,7 +1,7 @@
 'use client'
 import * as z from 'zod'
 import Heading from "@/components/Heading"
-import { MessageSquare } from "lucide-react"
+import { Code, MessageSquare } from "lucide-react"
 import { useForm } from "react-hook-form"
 import { formShema } from './constants'
 import {zodResolver} from '@hookform/resolvers/zod'
@@ -17,9 +17,10 @@ import {Loader} from '@/components/Loader'
 import { cn } from '@/lib/utils'
 import { UserAvatar } from '@/components/UserAvatar'
 import { BotAvatar } from '@/components/BotAvatar'
+import ReactMarkdown from 'react-markdown'
 
 
-const ConversationPage = () => {
+const CodePage = () => {
     const form = useForm<z.infer<typeof formShema>>({
         resolver: zodResolver(formShema),
         defaultValues:{
@@ -36,7 +37,7 @@ const ConversationPage = () => {
             content: values.prompt,
           };
           const newMesseges = [...messeges, userMessege];
-          const response = await axios.post("/api/conversation", {
+          const response = await axios.post("/api/code", {
             messeges: newMesseges,
           });
           setMesseges((current)=> [...current, userMessege, response.data]);
@@ -52,11 +53,11 @@ const ConversationPage = () => {
   return (
     <div>
         <Heading
-        title="Conversation" 
-        description="Our Simple Conversation Model"
-        icon={MessageSquare}
-        iconColor="text-violet-500"
-        bgColor="bg-violet-500/10"
+        title="Code Generation" 
+        description="Generate code using Descriptive texts"
+        icon={Code}
+        iconColor="text-green-700"
+        bgColor="bg-green-700/10"
         />
 
         <div className="px-4 lg:px-8">
@@ -85,14 +86,14 @@ const ConversationPage = () => {
                       <Input
                         className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                         disabled={isLoading} 
-                        placeholder="How do I calculate the radius of a circle?" 
+                        placeholder="What do you want to code?" 
                         {...field}
                       />
                     </FormControl>
                   </FormItem>
                 )}
               />
-              <Button className="bg-violet-500/10 text-violet-500 hover:bg-violet-500 hover:text-violet-100 col-span-12 lg:col-span-2 w-full" type="submit" disabled={isLoading} size="icon">
+              <Button className="bg-green-700/10 text-green-700 hover:bg-green-700 hover:text-green-100 col-span-12 lg:col-span-2 w-full" type="submit" disabled={isLoading} size="icon">
                 Generate
               </Button>
             </form>
@@ -115,9 +116,19 @@ const ConversationPage = () => {
                   )}
                   >
                     {messege.role === 'user' ? <UserAvatar/> : <BotAvatar/>}
-                    <p className='text-sm'>
-                    {messege.content}
-                    </p>
+                    <ReactMarkdown components={{
+                        pre: ({node, ...props})=>(
+                            <div className='overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg'>
+                                <pre {...props}/>
+                            </div>
+                        ),
+                        code: ({node, ...props})=>(
+                                <code className='bg-black/10 rounded-lg p-1' {...props}/>
+                        ),
+                    }} className='overflow-hidden text-sm leading-7'>
+                    {messege.content || ""}
+                    </ReactMarkdown>
+                    
                   </div>
                 ))}
 
@@ -128,4 +139,4 @@ const ConversationPage = () => {
   )
 }
 
-export default ConversationPage
+export default CodePage
