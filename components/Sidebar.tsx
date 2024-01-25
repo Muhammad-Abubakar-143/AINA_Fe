@@ -1,22 +1,22 @@
-'use client'
+"use client";
 
+import Link from "next/link";
+import Image from "next/image";
+import { Montserrat } from 'next/font/google'
+import { Code, ImageIcon, LayoutDashboard, MessageSquare, Music, Settings, VideoIcon } from "lucide-react";
+import { usePathname } from "next/navigation";
 
-import { cn } from "@/lib/utils"
-import { LayoutDashboard,Code, ImageIcon, MessageSquare, Music, Settings, VideoIcon, Newspaper } from "lucide-react"
-import { Montserrat } from "next/font/google"
-import Image from "next/image"
-import Link from "next/link"
-import {usePathname} from 'next/navigation'
-const monsterrat = Montserrat({ weight: '600', subsets: ['latin'] })
+import { cn } from "@/lib/utils";
+import { FreeCounter } from "@/components/free-counter";
 
+const poppins = Montserrat ({ weight: '600', subsets: ['latin'] });
 
-const sideRoutes = [
+const routes = [
   {
-    key: 1,
     label: 'Dashboard',
-    href: '/dashboard',
     icon: LayoutDashboard,
-    color: "text-sky-500",
+    href: '/dashboard',
+    color: "text-sky-500"
   },
   {
     label: 'Conversation',
@@ -49,44 +49,54 @@ const sideRoutes = [
     href: '/code',
   },
   {
-    label: 'News',
-    icon: Newspaper,
-    color: "text-blue-700",
-    href: '/news',
-  },
-  {
     label: 'Settings',
     icon: Settings,
     href: '/settings',
   },
- 
 ];
 
+export const Sidebar = ({
+  apiLimitCount = 0,
+  isPro = false
+}: {
+  apiLimitCount: number;
+  isPro: boolean;
+}) => {
+  const pathname = usePathname();
 
-const Sidebar = () => {
-  const pathname = usePathname() 
   return (
-    <div className="flex flex-col space-y-4 py-4 h-full bg-[#111827] text-white">
-      <div className="flex-1 px-3 py-2 ">
-        <Link href='/dashboard' className="flex  pl-3 mb-14">
-          <div className="relative w-8 h-8 mr-4">
-            <Image src='/logo.png' alt="logo" fill />
+    <div className="space-y-4 py-4 flex flex-col h-full bg-[#111827] text-white">
+      <div className="px-3 py-2 flex-1">
+        <Link href="/dashboard" className="flex items-center pl-3 mb-14">
+          <div className="relative h-8 w-8 mr-4">
+            <Image fill alt="Logo" src="/logo.png" />
           </div>
-          <Image src='/aina(white).svg' alt="aina" width={100} height={1}/>
+          <h1 className={cn("text-2xl font-bold", poppins.className)}>
+            Genius
+          </h1>
         </Link>
         <div className="space-y-1">
-          {sideRoutes.map((index) => (
-            <Link key={index.key} href={index.href} className={cn("text-sm group flex p-3 justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-lg transition", pathname === index.href ? 'text-white bg-white/10':'text-zinc-400',)}>
+          {routes.map((route) => (
+            <Link
+              key={route.href} 
+              href={route.href}
+              className={cn(
+                "text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-lg transition",
+                pathname === route.href ? "text-white bg-white/10" : "text-zinc-400",
+              )}
+            >
               <div className="flex items-center flex-1">
-                <index.icon className={cn("h-5 w-5 mr-3", index.color)} />
-                {index.label}
+                <route.icon className={cn("h-5 w-5 mr-3", route.color)} />
+                {route.label}
               </div>
             </Link>
           ))}
         </div>
       </div>
+      <FreeCounter 
+        apiLimitCount={apiLimitCount} 
+        isPro={isPro}
+      />
     </div>
-  )
-}
-
-export default Sidebar
+  );
+};
