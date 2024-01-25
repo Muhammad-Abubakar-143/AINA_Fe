@@ -1,27 +1,21 @@
+import { UserButton } from "@clerk/nextjs";
 
-import { UserButton } from '@clerk/nextjs'
-import MobileSidebar from './Mobile-sidebar'
-import { useEffect, useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
+import { MobileSidebar } from "@/components/mobile-sidebar";
+import { getApiLimitCount } from "@/lib/api-limit";
+import { checkSubscription } from "@/lib/subscription";
 
-const Navbar = () => {
+const Navbar = async () => {
+  const apiLimitCount = await getApiLimitCount();
+  const isPro = await checkSubscription();
 
-  return (
-    <div className='flex items-center mb-5 justify-center p-4'>
-      <MobileSidebar/>
-      <Link href='/dashboard' className="flex ml-4  md:hidden">
-          <div className="relative w-10 h-5 mr-4">
-            <Image src='/logo.png' alt="logo" fill />
-          </div>
-          <Image src='/aina(black).svg' alt="aina" width={100} height={1}/>
-        </Link>
-
-        <div className='flex w-full justify-end'>
-            <UserButton afterSignOutUrl='/' />
-        </div>
+  return ( 
+    <div className="flex items-center p-4">
+      <MobileSidebar isPro={isPro} apiLimitCount={apiLimitCount} />
+      <div className="flex w-full justify-end">
+        <UserButton afterSignOutUrl="/" />
+      </div>
     </div>
-  )
+   );
 }
-
-export default Navbar
+ 
+export default Navbar;
