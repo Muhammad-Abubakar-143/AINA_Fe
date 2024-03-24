@@ -14,8 +14,9 @@ export const LandingNavbar = () => {
   const { isSignedIn } = useAuth();
 
   return (
-    <nav className="p-4 bg-transparent flex items-center justify-between">
-      <Link href="/" className="flex items-center">
+    <nav className="fixed top-0 left-0 w-full z-50  border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm bg-n-8/90 backdrop-blur-sm">
+      <div className="flex items-center justify-between px-5 py-3 lg:px-6 lg:px-7.5 xl:px-10 max-lg:py-4">
+      <Link href="/" className="flex items-center w-[12rem] xl:mr-8">
         <div className="relative h-8 w-8 mr-4">
           <Image fill alt="Logo" src="/logo.png" />
         </div>
@@ -24,11 +25,13 @@ export const LandingNavbar = () => {
         </h1>
       </Link>
       <div className="flex items-center gap-x-2">
-        <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
-          <Button variant="outline" className="rounded-full">
+        <Link className="button relative md:inline-flex items-center justify-center h-11 transition-colors hover:text-color-1 px-7 text-n-1 hidden lg:flex" href={isSignedIn ? "/dashboard" : "/sign-up"}>
+          <Button variant="outline" className="rounded-full text-[#000]">
             Get Started
           </Button>
         </Link>
+      </div>
+
       </div>
     </nav>
   )
