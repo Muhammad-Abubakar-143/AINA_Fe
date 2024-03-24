@@ -4,10 +4,10 @@ const LandingLayout = ({
   children: React.ReactNode;
 }) => {
   return (
-    <main className="h-full bg-[#111827] overflow-auto">
-      <div className="mx-auto max-w-screen-xl h-full w-full">
+    <main className="scroll-smooth pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
+      
         {children}
-      </div>
+      
     </main>
    );
 }
