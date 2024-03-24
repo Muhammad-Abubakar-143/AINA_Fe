@@ -2,7 +2,7 @@ import { notificationImages } from "@/lib/constants";
 import Image from "next/image";
 
 
-const Notification = ({ className, title }) => {
+const Notification = ({ className, title }:{className:string, title:string}) => {
   return (
     <div
       className={`${
@@ -25,7 +25,7 @@ const Notification = ({ className, title }) => {
             {notificationImages.map((item, index) => (
               <li
                 key={index}
-                className="flex w-6 h-6 border-2 border-n-12 rounded-full overflow-hidden"
+                className="flex w-6 h-6 border-2 mx-1 border-n-12 rounded-full overflow-hidden"
               >
                 <Image
                   src={item}

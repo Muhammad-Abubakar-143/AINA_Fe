@@ -1,14 +1,14 @@
 import Image from "next/image";
 
-const Generating = ({ className }) => {
+const Generating = ({ className }:{className:string}) => {
   return (
     <div
-      className={`flex items-center h-[3.5rem] px-6 bg-n-8/80 rounded-[1.7rem] ${
+      className={`flex items-center h-[3.5rem] lg:backdrop-blur-sm bg-black/25 backdrop-blur-sm px-6 rounded-[1.7rem] ${
         className || ""
       } text-base`}
     >
       <Image className="w-5 h-5 mr-4" src="/loading.png" width={30} height={30} alt="Loading" />
-      AI is generating
+      AINA is generating
     </div>
   );
 };
