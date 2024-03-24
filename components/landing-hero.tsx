@@ -20,8 +20,8 @@ import Section from "./Section";
 export const Gradient = () => {
   return (
     <>
-      <div className="relative z-1 h-6 mx-2.5 bg-n-11 shadow-xl rounded-b-[1.25rem] lg:h-6 lg:mx-8" />
-      <div className="relative z-1 h-6 mx-6 bg-n-11/70 shadow-xl rounded-b-[1.25rem] lg:h-6 lg:mx-20" />
+      <div className="relative z-1 h-6 mx-2.5 bg-[#1b1b2e] shadow-xl rounded-b-[1.25rem] lg:h-6 lg:mx-8" />
+      <div className="relative z-1 h-6 mx-6 bg-[#1b1b2eb3] shadow-xl rounded-b-[1.25rem] lg:h-6 lg:mx-20" />
     </>
   );
 };
@@ -62,9 +62,9 @@ export const LandingHero = () => {
     >
       <div className="container relative" ref={parallaxRef}>
         <div className="relative z-10 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
-          <h1 className="lg:text-3xl md:text-2xl text-xl mb-6 text-[#fff]">
+          <h1 className="lg:text-5xl md:text-3xl mx-auto font-bold text-xl mb-6 text-[#fff]">
             Explore the Possibilities of&nbsp;AI&nbsp;Chatting with
-            <span className="inline-block relative">
+            <span className="inline-block relative ml-1">
               AINA
               <Image
                 src="/curve.png"
@@ -75,11 +75,11 @@ export const LandingHero = () => {
               />
             </span>
           </h1>
-          <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-            Unleash the power of AI within Brainwave. Upgrade your productivity
+          <p className=" text-secondary max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
+            Unleash the power of AI within AINA. Upgrade your productivity
             with Brainwave, the open AI chat app.
           </p>
-          <Button>
+          <Button variant="outline" className="rounded-full text-black">
             <Link href="/pricing">
             Get started
             </Link>
@@ -88,7 +88,7 @@ export const LandingHero = () => {
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
           <div className="relative z-10 p-0.5 rounded-2xl bg-conic-gradient">
             <div className="relative bg-n-8 rounded-[1rem]">
-              <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
+              <div className="h-[1.4rem] bg-[#43435c] rounded-t-[0.9rem]" />
 
               <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
                 <Image
@@ -129,7 +129,7 @@ export const LandingHero = () => {
           <BackgroundCircles />
         </div>
 
-        <CompanyLogos className="hidden relative z-10 mt-20 lg:block" />
+        {/* <CompanyLogos className="hidden relative z-10 mt-20 lg:block" /> */}
       </div>
 
       <BottomLine />
