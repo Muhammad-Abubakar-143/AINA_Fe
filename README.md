@@ -1,15 +1,9 @@
-# Build a SaaS AI Platform with Next.js 13, React, Tailwind, Prisma, Stripe | Full Tutorial 2023
-
-![Copy of Copy of Copy of Fullstack Twitter Clone](https://github.com/AntonioErdeljac/next13-ai-saas/assets/23248726/c47e604a-b50b-4eb0-b420-fda20908f522)
+# Build a SaaS AI Platform with Next.js 13, React, Tailwind, Prisma, Stripe
 
 
-
-This is a repository for Build a SaaS AI Platform with Next.js 13, React, Tailwind, Prisma, Stripe | Full Tutorial 2023.
-
-[VIDEO TUTORIAL](https://www.youtube.com/watch?v=ffJ38dBzrlY)
+This is a repository for Build a SaaS AI Platform with Next.js 13, React, Tailwind, Prisma, Stripe.
 
 Features:
-
 - Tailwind design
 - Tailwind animations and effects
 - Full responsiveness
@@ -23,8 +17,8 @@ Features:
 - Page loading state
 - Stripe monthly subscription
 - Free tier with API limiting
-- How to write POST, DELETE, and GET routes in route handlers (app/api)
-- How to fetch data in server react components by directly accessing database (WITHOUT API! like Magic!)
+- How to write POST, DELETE, and GET routes in route handlers (app/API)
+- How to fetch data in server react components by directly accessing the database (WITHOUT API! like Magic!)
 - How to handle relations between Server and Child components!
 - How to reuse layouts
 - Folder structure in Next 13 App Router
