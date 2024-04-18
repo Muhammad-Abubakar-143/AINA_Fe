@@ -63,7 +63,7 @@ export const LandingHero = () => {
       <div className="container relative" ref={parallaxRef}>
         <div className="relative z-10 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
           <h1 className="lg:text-5xl md:text-3xl mx-auto font-bold text-xl mb-6 text-[#fff]">
-            Explore the Possibilities of&nbsp;AI&nbsp;Chatting with
+            Explore the Possibilities <br /> of&nbsp;AI&nbsp;Chatting with
             <span className="inline-block relative ml-1">
               AINA
               <Image
