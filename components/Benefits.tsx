@@ -45,7 +45,7 @@ const Benefits = () => {
               {item.light && <div className="absolute top-0 left-1/4 w-full aspect-square bg-radial-gradient from-[#28206C] to-[#28206C]/0 to-70% pointer-events-none" />}
 
               <div
-                className="absolute inset-0.5 bg-[#0e0c15] rounded-b-[30px] rounded-l-[30px] rounded-r-[25%]"
+                className="absolute inset-0.5 bg-[#0e0c15] rounded-b-[10%] rounded-l-[30px] rounded-r-[25%]"
                 style={{ clipPath: "url(#benefits)" }}
               >
                 <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">

@@ -5,7 +5,7 @@ const TagLine = ({ className, children }:{className:string,childern:React.ReactN
   return (
     <div className={`tagline flex items-center ${className || ""}`}>
       {brackets("left")}
-      <div className="mx-3 text-n-3">{children}</div>
+      <div className="mx-3 text-[#757185]">{children}</div>
       {brackets("right")}
     </div>
   );
