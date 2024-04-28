@@ -6,10 +6,10 @@ import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
-import { FileAudio } from "lucide-react";
+import { FileAudio, Video } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-import { Heading } from "@/components/heading";
+import { DashboardHeading, Heading } from "@/components/heading";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
@@ -54,10 +54,10 @@ const VideoPage = () => {
 
   return ( 
     <div>
-      <Heading
+      <DashboardHeading
         title="Video Generation"
         description="Turn your prompt into video."
-        icon={FileAudio}
+        icon={Video}
         iconColor="text-orange-700"
         bgColor="bg-orange-700/10"
       />
@@ -93,7 +93,7 @@ const VideoPage = () => {
                 </FormItem>
               )}
             />
-            <Button className="col-span-12 lg:col-span-2 w-full" type="submit" disabled={isLoading} size="icon">
+            <Button className="col-span-12 lg:col-span-2 w-full bg-orange-700 hover:bg-orange-500" type="submit" disabled={isLoading} size="icon">
               Generate
             </Button>
           </form>

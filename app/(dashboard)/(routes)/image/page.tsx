@@ -10,7 +10,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
-import { Heading } from "@/components/heading";
+import { DashboardHeading, Heading } from "@/components/heading";
 import { Button } from "@/components/ui/button";
 import { Card, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -60,7 +60,7 @@ const PhotoPage = () => {
 
   return ( 
     <div>
-      <Heading
+      <DashboardHeading
         title="Image Generation"
         description="Turn your prompt into an image."
         icon={ImageIcon}
@@ -103,7 +103,7 @@ const PhotoPage = () => {
               control={form.control}
               name="amount"
               render={({ field }) => (
-                <FormItem className="col-span-12 lg:col-span-2">
+                <FormItem className="col-span-12 lg:col-span-2 text-black">
                   <Select 
                     disabled={isLoading} 
                     onValueChange={field.onChange} 
@@ -133,7 +133,7 @@ const PhotoPage = () => {
               control={form.control}
               name="resolution"
               render={({ field }) => (
-                <FormItem className="col-span-12 lg:col-span-2">
+                <FormItem className="col-span-12 lg:col-span-2 text-black">
                   <Select 
                     disabled={isLoading} 
                     onValueChange={field.onChange} 
@@ -159,7 +159,7 @@ const PhotoPage = () => {
                 </FormItem>
               )}
             />
-            <Button className="col-span-12 lg:col-span-2 w-full" type="submit" disabled={isLoading} size="icon">
+            <Button className="col-span-12 lg:col-span-2 w-full bg-pink-700 hover:bg-pink-500" type="submit" disabled={isLoading} size="icon">
               Generate
             </Button>
           </form>
