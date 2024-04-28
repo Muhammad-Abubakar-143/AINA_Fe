@@ -6,7 +6,7 @@ import { checkSubscription } from "@/lib/subscription";
 import { incrementApiLimit, checkApiLimit } from "@/lib/api-limit";
 
 const configuration = new Configuration({
-  apiKey: process.env.OPENAI_KEY,
+  apiKey: process.env.OPEN_AI_KEY,
 });
 
 const openai = new OpenAIApi(configuration);
