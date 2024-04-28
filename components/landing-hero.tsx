@@ -30,7 +30,7 @@ export const Gradient = () => {
 export const BottomLine = () => {
   return (
     <>
-      <div className="hidden absolute top-[55.25rem] left-10 right-10 h-0.25 bg-n-6 pointer-events-none xl:block" />
+      <div className="hidden absolute top-[55.25rem] left-10 right-10 h-0.25 bg-white/10 pointer-events-none xl:block" />
 
       <svg className="hidden absolute top-[54.9375rem] right-[2.1875rem] z-2 pointer-events-none xl:block" width="11" height="11" fill="none">
       <path
@@ -102,7 +102,7 @@ export const LandingHero = () => {
                 <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
 
                 <ScrollParallax isAbsolutelyPositioned>
-                  <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
+                  <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-white/10 rounded-2xl xl:flex">
                     {heroIcons.map((icon, index) => (
                       <li className="p-5" key={index}>
                         <Image src={icon} width={24} height={25} alt={icon} />
@@ -129,7 +129,6 @@ export const LandingHero = () => {
           <BackgroundCircles />
         </div>
 
-        {/* <CompanyLogos className="hidden relative z-10 mt-20 lg:block" /> */}
       </div>
 
       <BottomLine />

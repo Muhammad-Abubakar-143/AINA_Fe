@@ -14,7 +14,7 @@ export const LandingNavbar = () => {
   const { isSignedIn } = useAuth();
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50  border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm bg-n-8/90 backdrop-blur-sm">
+    <nav className="fixed top-0 left-0 w-full z-50  border-b border-white/10 lg:backdrop-blur-sm bg-n-8/90 backdrop-blur-sm">
       <div className="flex items-center justify-between px-5 py-3 lg:px-6 lg:px-7.5 xl:px-10 max-lg:py-4">
       <Link href="/" className="flex items-center w-[12rem] xl:mr-8">
         <div className="relative h-8 w-8 mr-4">
