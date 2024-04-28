@@ -30,15 +30,15 @@ const Services = () => {
             </div>
 
             <div className="relative z-1 max-w-[17rem] ml-auto">
-              <h4 className="h4 mb-4">Smartest AI</h4>
-              <p className="body-2 mb-[3rem] text-n-3">
-                Brainwave unlocks the potential of AI-powered applications
+              <h4 className="md:text-4xl text-2xl mb-4">Smartest AI</h4>
+              <p className="text-[#757185] mb-[3rem]">
+                AINA unlocks the potential of AI-powered applications
               </p>
               <ul className="body-2">
                 {brainwaveServices.map((item, index) => (
                   <li
                     key={index}
-                    className="flex items-start py-4 border-t border-n-6"
+                    className="flex items-start py-4 border-b border-white/10"
                   >
                     <Image width={24} height={24} src="/collaboration/check.svg" alt='Check Icon' />
                     <p className="ml-4">{item}</p>
@@ -47,11 +47,11 @@ const Services = () => {
               </ul>
             </div>
 
-            <Generating className="absolute left-4 right-4 bottom-4 border-n-1/10 border lg:left-1/2 lg-right-auto lg:bottom-8 lg:-translate-x-1/2" />
+            <Generating className="absolute left-4 right-4 bottom-4 border-white/10 border lg:left-1/2 lg-right-auto lg:bottom-8 lg:-translate-x-1/2" />
           </div>
 
           <div className="relative z-1 grid gap-5 lg:grid-cols-2">
-            <div className="relative min-h-[39rem] border border-n-1/10 rounded-3xl overflow-hidden">
+            <div className="relative min-h-[39rem] border border-white/10 rounded-3xl overflow-hidden">
               <div className="absolute inset-0">
                 <Image
                   src="/services/service-2.png"

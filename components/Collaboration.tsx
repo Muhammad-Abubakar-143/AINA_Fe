@@ -27,7 +27,7 @@ const Collaboration = () => {
           ))}
         </ul>
 
-        <Button variant="outline" className='text-black'>Try it now</Button>
+        <Button variant="premium">Try it now</Button>
       </div>
 
       <div className="lg:ml-auto xl:w-[38rem] mt-4">
