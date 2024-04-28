@@ -15,10 +15,8 @@ const LandingPage = () => {
       <Benefits />
       <Collaboration />
       <Services />
-      {/* <Pricing /> */}
       <Roadmap />
       <LandingFooter />
-      {/* <LandingContent /> */}
     </>
    );
 }
