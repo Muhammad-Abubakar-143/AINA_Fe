@@ -6,6 +6,7 @@ import { checkSubscription } from "@/lib/subscription";
 import { incrementApiLimit, checkApiLimit } from "@/lib/api-limit";
 
 const configuration = new Configuration({
+  organization: "org-hcDLipwZ7ETYYpGxIh03BILn",
   apiKey: process.env.OPEN_AI_KEY,
 });
 
@@ -40,7 +41,7 @@ export async function POST(
 
     const response = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
-      messages
+      messages: messages
     });
 
     if (!isPro) {

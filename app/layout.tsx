@@ -23,12 +23,16 @@ export default async function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
+        <head>
+          
+        </head>
         <CrispProvider />
         <body className={font.className}>
           <ToasterProvider />
           <ModalProvider />
           {children}
         </body>
+        
       </html>
     </ClerkProvider>
   )
