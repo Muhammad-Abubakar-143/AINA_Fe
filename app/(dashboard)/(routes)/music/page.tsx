@@ -9,7 +9,7 @@ import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Music, Send } from "lucide-react";
 
-import { Heading } from "@/components/heading";
+import { DashboardHeading, Heading } from "@/components/heading";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
@@ -55,7 +55,7 @@ const MusicPage = () => {
 
   return ( 
     <div>
-      <Heading
+      <DashboardHeading
         title="Music Generation"
         description="Turn your prompt into music."
         icon={Music}
@@ -94,7 +94,7 @@ const MusicPage = () => {
                 </FormItem>
               )}
             />
-            <Button className="col-span-12 lg:col-span-2 w-full" type="submit" disabled={isLoading} size="icon">
+            <Button className="col-span-12 lg:col-span-2 w-full bg-emerald-700 hover:bg-emerald-500" type="submit" disabled={isLoading} size="icon">
               Generate
             </Button>
           </form>
