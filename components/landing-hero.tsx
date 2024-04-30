@@ -79,8 +79,8 @@ export const LandingHero = () => {
             Unleash the power of AI within AINA. Upgrade your productivity
             with Brainwave, the open AI chat app.
           </p>
-          <Button variant="outline" className="rounded-full text-black">
-            <Link href="/pricing">
+          <Button variant="premium" className="rounded-full">
+            <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
             Get started
             </Link>
           </Button>
