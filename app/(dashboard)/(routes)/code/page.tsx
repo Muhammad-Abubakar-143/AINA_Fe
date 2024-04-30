@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 import { ChatCompletionRequestMessage } from "openai";
 
 import { BotAvatar } from "@/components/bot-avatar";
-import { Heading } from "@/components/heading";
+import { DashboardHeading, Heading } from "@/components/heading";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -60,7 +60,7 @@ const CodePage = () => {
 
   return ( 
     <div>
-      <Heading
+      <DashboardHeading
         title="Code Generation"
         description="Generate code using descriptive text."
         icon={Code}

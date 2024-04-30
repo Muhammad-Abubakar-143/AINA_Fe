@@ -12,13 +12,11 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-export async function POST(
-  req: Request
-) {
+export async function POST(req: Request) {
   try {
     const { userId } = auth();
     const body = await req.json();
-    const { messages  } = body;
+    const { messages } = body;
 
     if (!userId) {
       return new NextResponse("Unauthorized", { status: 401 });
@@ -41,7 +39,7 @@ export async function POST(
 
     const response = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
-      messages: messages
+      messages: messages,
     });
 
     if (!isPro) {
@@ -50,8 +48,6 @@ export async function POST(
 
     return NextResponse.json(response.data.choices[0].message);
   } catch (error) {
-    console.log(error)
-    // console.log('[CONVERSATION_ERROR]', error);
-    // return new NextResponse("Internal Error", { status: 500 });
+    console.log('[CONVERSATION_ERROR]', error);
   }
-};
+}
