@@ -54,7 +54,7 @@ const MusicPage = () => {
   }
 
   return ( 
-    <div>
+    <div className="h-screen">
       <DashboardHeading
         title="Music Generation"
         description="Turn your prompt into music."
@@ -100,7 +100,7 @@ const MusicPage = () => {
           </form>
         </Form>
         {isLoading && (
-          <div className="p-20">
+          <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
             <Loader />
           </div>
         )}

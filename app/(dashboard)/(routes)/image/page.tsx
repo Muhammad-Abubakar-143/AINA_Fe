@@ -59,7 +59,7 @@ const PhotoPage = () => {
   }
 
   return ( 
-    <div>
+    <div className="h-screen">
       <DashboardHeading
         title="Image Generation"
         description="Turn your prompt into an image."
@@ -165,7 +165,7 @@ const PhotoPage = () => {
           </form>
         </Form>
         {isLoading && (
-          <div className="p-20">
+          <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
             <Loader />
           </div>
         )}

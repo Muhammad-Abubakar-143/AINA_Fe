@@ -62,26 +62,26 @@ export const LandingHero = () => {
     >
       <div className="container relative" ref={parallaxRef}>
         <div className="relative z-10 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
-          <h1 className="lg:text-5xl md:text-3xl mx-auto font-bold text-xl mb-6 text-[#fff]">
+          <h1 className="md:text-6xl mx-auto font-bold text-4xl mb-6 text-[#fff]">
             Explore the Possibilities <br /> of&nbsp;AI&nbsp;Chatting with
             <span className="inline-block relative ml-1">
               AINA
               <Image
                 src="/curve.png"
-                className="absolute top-full left-0 w-full xl:-mt-2"
+                className="absolute top-full left-0 w-full mt-1"
                 width={624}
                 height={28}
                 alt="Curve"
               />
             </span>
           </h1>
-          <p className=" text-secondary max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-            Unleash the power of AI within AINA. Upgrade your productivity
-            with Brainwave, the open AI chat app.
+          <p className="max-w-3xl mx-auto mb-6 text-[#757185] lg:mb-8">
+            Unleash the power of AI within AINA. Upgrade your productivity <br />
+            with AINA, an AI powered Web Application.
           </p>
           <Button variant="premium" className="rounded-full">
             <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
-            Get started
+            Get started for free
             </Link>
           </Button>
         </div>
