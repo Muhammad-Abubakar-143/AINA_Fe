@@ -118,7 +118,7 @@ const ConversationPage = () => {
                  )}
                >
                  {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
-                 <p className="text-sm text-black mb-0">
+                 <p className="text-md text-black mb-0 relative bottom-[-5px]">
                    {message.content}
                  </p>
                </div>

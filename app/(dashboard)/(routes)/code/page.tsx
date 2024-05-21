@@ -59,7 +59,7 @@ const CodePage = () => {
   }
 
   return ( 
-    <div>
+    <div className="h-screen">
       <DashboardHeading
         title="Code Generation"
         description="Generate code using descriptive text."
@@ -91,7 +91,7 @@ const CodePage = () => {
                   <FormItem className="col-span-12 lg:col-span-10">
                     <FormControl className="m-0 p-0">
                       <Input
-                        className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
+                        className="border-0 outline-none text-black focus-visible:ring-0 focus-visible:ring-transparent"
                         disabled={isLoading} 
                         placeholder="Simple toggle button using react hooks." 
                         {...field}
@@ -100,7 +100,7 @@ const CodePage = () => {
                   </FormItem>
                 )}
               />
-              <Button className="col-span-12 lg:col-span-2 w-full" type="submit" disabled={isLoading} size="icon">
+              <Button className="col-span-12 lg:col-span-2 w-full bg-green-700 hover:bg-green-500" type="submit" disabled={isLoading} size="icon">
                 Generate
               </Button>
             </form>
@@ -127,14 +127,14 @@ const CodePage = () => {
                 {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
                 <ReactMarkdown components={{
                   pre: ({ node, ...props }) => (
-                    <div className="overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg">
+                    <div className="overflow-auto w-full my-2 bg-black/10 p-2 text-black rounded-lg">
                       <pre {...props} />
                     </div>
                   ),
                   code: ({ node, ...props }) => (
                     <code className="bg-black/10 rounded-lg p-1" {...props} />
                   )
-                }} className="text-sm overflow-hidden leading-7">
+                }} className="text-md overflow-hidden text-black leading-7">
                   {message.content || ""}
                 </ReactMarkdown>
               </div>

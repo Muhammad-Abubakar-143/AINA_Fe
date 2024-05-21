@@ -27,7 +27,7 @@ const Collaboration = () => {
           ))}
         </ul>
 
-        <Button variant="premium">Try it now</Button>
+        <Button variant="premium" className='rounded-full'>Try it now</Button>
       </div>
 
       <div className="lg:ml-auto xl:w-[38rem] mt-4">

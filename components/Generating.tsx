@@ -8,7 +8,7 @@ const Generating = ({ className }:{className:string}) => {
       } text-base`}
     >
       <Image className="w-5 h-5 mr-4" src="/loading.png" width={30} height={30} alt="Loading" />
-      AINA is generating
+      AINA is thinking
     </div>
   );
 };
